@@ -1,4 +1,4 @@
-package douad.mining.patterns.constraints.overlap.topk;
+package douad.mining.patterns.constraints.topk;
 
 import java.util.ArrayList;
 import java.util.BitSet;

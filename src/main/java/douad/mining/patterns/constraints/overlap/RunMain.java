@@ -192,7 +192,7 @@ public class RunMain {
 	    
 	    // Determine whether it's TopK or not and diversity
  		//try {
- 			if(argparam[5].equals("-j")) {
+ 			if(argparam[5].equals("-t")) {
  				Tmax = Double.valueOf(argparam[6]);
  			}
  			else {

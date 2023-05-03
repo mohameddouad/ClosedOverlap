@@ -1,4 +1,4 @@
-package douad.mining.patterns.constraints.overlap.topk;
+package douad.mining.patterns.constraints.topk;
 
 import io.gitlab.chaver.mining.patterns.constraints.*;
 import io.gitlab.chaver.mining.patterns.io.DatReader;
@@ -196,7 +196,7 @@ public class RunMain {
 	    
 	    // Determine whether it's TopK or not and diversity
  		//try {
- 			if(argparam[5].equals("-j")) {
+ 			if(argparam[5].equals("-t")) {
  				Tmax = Double.valueOf(argparam[6]);
  			}
  			else {

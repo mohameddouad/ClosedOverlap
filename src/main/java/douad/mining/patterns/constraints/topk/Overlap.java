@@ -1,4 +1,4 @@
-package douad.mining.patterns.constraints.overlap.topk;
+package douad.mining.patterns.constraints.topk;
 
 import io.gitlab.chaver.mining.patterns.io.Database;
 
