@@ -1,48 +1,30 @@
 ############################################################
-closed diversity 
-#################
+closed overlap
+############################################################
 
 Description :
-Les jeux de données sont stockées dans le fichier data/ en fichier compressé zip. Tous les jeux de données proviennent du dépôt CP4IM "Tias Guns".
-Pour que le projet compile, utiliser Maven et le fichier pom.xml qui va importer toutes les librairies nécessaires (Choco 4 en particulier). 
-Sinon, il faut télécharger et ajouter Choco 4 au projet et l'ajouter en "external jar" au projet. (téléchargement: https://github.com/chocoteam/choco-solver/releases/tag/4.0.2).
+To compile the project, use Maven and the pom.xml file that will import all necessary libraries.
+Otherwise, you need to download and add Choco to the project and add it as an "external jar" to the project. (Download link: https://github.com/chocoteam/choco-solver).
 
-Il existe trois versions de ClosedDiversity :
+There are two versions of ClosedOverlap:
+####################################
+    --> ClosedOverlap :
+####################################
+            For execution, the following arguments must be provided:
+            ** The path to the dataset
+            ** The path to the log file (.log) and to a statistics file (.ana)
+            ** The minimum frequency threshold fmin in percentage (example: 0.2)
+            ** The maximum diversity threshold Tmax in percentage (example: 0.05)
 
-    --> ClosedDiversity_1 : utilise les premières version de LB et UB
-            pour l'exécution, il faut fournir les arguments suivants : 
-                    ** le chemin vers le dataset
-                    ** le chemin vers le fichier log (.log) ainsi que vers un fichier statistique (.ana)
-                    ** le seuil de fréquence minimum fmin en pourcentage (exemple : 0.2)
-                    ** le seuil de diversité maximum jmax en pourcentage (exmple : 0.05)
-                    ** la stratégie de branchement (WITNESS ou MINCOV).
-                    ** le nombre de threads (par défaut 0)
-            Exemple java -jar bin_file pathToDatasetDir/chess.dat pathToResultsDir/chess.res pathToResultsDir/chess.ana -f 0.2 -j 0.05 -ag MAX -s MINCOV -th 0
-    
-    --> ClosedDiversity_2 : garde le même LB que ClosedDiv_1 mais implémente un nouveau UB
-            pour l'exécution, les paramètres sont les mêmes que ceux de ClosedDiv_1
-    
-    --> ClosedDiversity_3 : garde le même UB que ClosedDiv_2 mais implémente un nouveau LB
-            pour l'exécution, un nouveau paramètre s'ajoute : 
-                    ** lorsque la stratégie de branchement vaut WITNESS, il faut aussi donner la stratégie d'exploration des sous-arbres witness : WITNESSDIVSOL ou WITNESSFIRSTSOL 
-            
-            Exemples: 
-                java -jar bin_file pathToDatasetDir/chess.dat pathToResultsDir/mushroom.res pathToResultsDir/chess.ana -f 0.05 -j 0.2 -ag MAX -s MINCOV  -th 0
-                ou
-                java -jar bin_file pathToDatasetDir/chess.dat pathToResultsDir/hepatitis.res pathToResultsDir/chess.ana -f 0.1 -j 0.1 -ag MAX -s WITNESS WITNESSDIVSOL -th 0
+            Example:
+            java -jar bin_file pathToDatasetDir/chess.dat pathToResultsDir/chess.res pathToResultsDir/chess.ana -f 0.2 -t 0.05
 
 
-############################################################
-diversity topk
-#################
-Arguments :
-    les arguments de ClosedDiversity en plus d'autres à définir plus tard comme la taille K du nombre de patterns
+######################################################
+    --> Top-k using entropy
+######################################################
+    Arguments:
+    The arguments of ClosedOverlap in addition to others to be defined later, such as the size K of the number of patterns.
 
-
-
-############################################################
-Flexics
-#################
-
-Description:
-Il s'agit d'un outil qui permet de réaliser un échantillonnage des motifs 
+    Examples:
+    java -jar bin_file.jar pathToDatasetDir/charm.dat pathToResultsDir/charm.res pathToResultsDir/charm.ana -f 0.2 -j 0.05 -topk 3
