@@ -22,10 +22,11 @@ public class Overlap extends Propagator<IntVar> implements IMonitorSolution {
     static double Tmax;
     private int theta;
     private final int k;
+    private boolean parallel;
     private List<int[]> itemsetsHistory = new ArrayList<>();
     private List<BitSet> coversHistory = new ArrayList<>();
 
-    public Overlap(Database database, BoolVar[] x, double Tmax, int theta, int k) {
+    public Overlap(Database database, BoolVar[] x, double Tmax, int theta, int k, boolean parallel) {
         super(x);
         this.database = database;
         this.verticalRepresentation = database.getVerticalRepresentation();
@@ -33,6 +34,7 @@ public class Overlap extends Propagator<IntVar> implements IMonitorSolution {
         this.Tmax = Tmax; //threshold of diversity
         this.theta = theta;
         this.k = k;
+        this.parallel = parallel;
     }
 
     private BitSet createCover() {
@@ -160,8 +162,16 @@ public class Overlap extends Propagator<IntVar> implements IMonitorSolution {
         
         int totalBitCodes = database.getNbTransactions();
         entropy = new Entropy(totalBitCodes);
-        //entropy.kMaximalEntropyInsert(coversHistory, itemsetsHistory, coverCandidate, itemsetCandidate, k);
-        entropy.kMaximalEntropyParallelInsert(coversHistory, itemsetsHistory, coverCandidate, itemsetCandidate, k);
+        
+        if (!parallel) {
+        	
+        	entropy.kMaximalEntropyInsert(coversHistory, itemsetsHistory, coverCandidate, itemsetCandidate, k);
+		
+        }else {
+			
+			entropy.kMaximalEntropyParallelInsert(coversHistory, itemsetsHistory, coverCandidate, itemsetCandidate, k);
+		
+        }        
         
     }
 
