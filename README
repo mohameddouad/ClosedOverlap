@@ -26,5 +26,9 @@ There are two versions of ClosedOverlap:
     Arguments:
     The arguments of ClosedOverlap in addition to others to be defined later, such as the size K of the number of patterns.
 
-    Examples:
+    Example:
     java -jar bin_file.jar pathToDatasetDir/charm.dat pathToResultsDir/charm.res pathToResultsDir/charm.ana -f 0.2 -j 0.05 -topk 3
+     
+    if we want to calculate entropies in parallel we add an argument -th
+    Example:
+    java -jar bin_file.jar pathToDatasetDir/charm.dat pathToResultsDir/charm.res pathToResultsDir/charm.ana -f 0.2 -j 0.05 -topk 3 -th
