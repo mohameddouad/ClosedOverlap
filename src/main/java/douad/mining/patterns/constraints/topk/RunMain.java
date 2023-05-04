@@ -41,6 +41,7 @@ public class RunMain {
 	
 	static double Tmax;
 	public static int k;
+	public static boolean parallel = false;  
 	
 	static Database database;
 	static List<int[]> itemsets;
@@ -205,6 +206,13 @@ public class RunMain {
  			
  			if(argparam[7].equals("-topk")) {
  				k = Integer.valueOf(argparam[8]);
+ 				
+ 				if(argparam[9].equals("-th")) {
+ 	 				parallel = true;
+ 	 			}
+ 	 			else {
+ 	 				k = Integer.valueOf("error");
+ 	 			}
  			}
  			else {
  				k = Integer.valueOf("error");
@@ -229,7 +237,7 @@ public class RunMain {
         model.post(new Constraint("Cover Size", new CoverSize(database, freq, x)));
         model.post(new Constraint("Cover Closure", new CoverClosure(database, x)));
         
-        Overlap overlap = new Overlap(database, x, Tmax, theta, k);
+        Overlap overlap = new Overlap(database, x, Tmax, theta, k, parallel);
         model.post(new Constraint("Overlap", overlap));
         Solver solver = model.getSolver();
         solver.plugMonitor(overlap);
