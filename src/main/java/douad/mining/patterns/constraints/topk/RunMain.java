@@ -211,7 +211,7 @@ public class RunMain {
  	 				parallel = true;
  	 			}
  	 			else {
- 	 				k = Integer.valueOf("error");
+ 	 				parallel = Boolean.valueOf("error");
  	 			}
  			}
  			else {
