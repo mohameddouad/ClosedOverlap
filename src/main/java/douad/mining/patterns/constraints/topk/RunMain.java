@@ -207,7 +207,7 @@ public class RunMain {
  			if(argparam[7].equals("-topk")) {
  				k = Integer.valueOf(argparam[8]);
  				
- 				if(argparam[9].equals("-th")) {
+ 				if((argparam.length > 9) && (argparam[9].equals("-th"))) {
  	 				parallel = true;
  	 			}
  	 			else {
