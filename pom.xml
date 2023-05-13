@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>ClosedDiversity</groupId>
-	<artifactId>ClosedDiversity</artifactId>
+    <groupId>ClosedOverlap</groupId>
+	<artifactId>ClosedOverlap</artifactId>
 	<version>ECML-PKDD-20-choco4.0.3</version>
 	<packaging>jar</packaging>
 
@@ -53,7 +53,7 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>build-closed</id>
+                        <id>build-closed-overlap</id>
                         <phase>package</phase>
 						<goals>
 							<goal>single</goal>
@@ -62,262 +62,13 @@
                             <archive>
                                 <manifest>
                                     <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.RunMain</mainClass>
+                                    <mainClass>douad.mining.patterns.constraints.overlap.RunMain</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
-                            <finalName>ClosedPattern-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-diversity_1</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_1.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversity_1-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-diversity_1_estFreq</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_1_estFreq.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversity_1_estFreq-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-diversity_2</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_2.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversity_2-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-diversity_2_estFreq</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_2_estFreq.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversity_2_estFreq-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-diversity_3</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_3.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversity_3-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-diversity_3_estFreq</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_3_estFreq.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversity_3_estFreq-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-onlylb</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.onlylb.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversityOnlyLB-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-onlyub</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.onlyub.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversityOnlyUB-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-diversity_overlap</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_overlap.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversity_overlap-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    
-                    <execution>
-                        <id>build-falsepositiveOverlap</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_FaultPositivesOverlap.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversityFalsePositiveOverlap-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-falsepositive</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.diversity_FaultPositives.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversityFalsePositive-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>  
-                  
-                    <execution>
-                        <id>build-checker</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.diversity.checker.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedDiversityChecker-choco4-0-3</finalName>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>build-closed-topk</id>
-                        <phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-                        <configuration>
-                            <archive>
-                                <manifest>
-                                    <addClasspath>true</addClasspath>
-                                    <mainClass>contraintes.closedpattern.topk.RunMain</mainClass>
-                                </manifest>
-                            </archive>
-                            <descriptorRefs>
-                                <descriptorRef>jar-with-dependencies</descriptorRef>
-                            </descriptorRefs>
-                            <finalName>ClosedPatternTopK-choco4-0-3</finalName>
+                            <finalName>ClosedOverlap-choco4-10-11</finalName>
                         </configuration>
                     </execution>
                     <execution>
@@ -330,7 +81,7 @@
                             <archive>
                                 <manifest>
                                     <addClasspath>true</addClasspath>
-                                    <mainClass>io.gitlab.chaver.mining.patterns.constraints.overlap.RunMain</mainClass>
+                                    <mainClass>douad.mining.patterns.constraints.topk.RunMain</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
